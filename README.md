@@ -14,6 +14,6 @@ JavaScript 入門講座用ソースコード。
   * <http://semooh.jp/jquery/>
 * [jQuery入門]
   * <http://www.jquerystudy.info/sample/simple/tab1.html>
-* [JavaScript 第6版](書籍)
+* [JavaScript 第6版]（書籍）
   * <http://www.oreilly.co.jp/books/9784873115733/>
 
