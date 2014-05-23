@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>JS入門</title>
+</head>
+<body>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+    
+        // サンプルJSON
+        json = {"name": "Yamanaka", "from": "Japan"};
+        document.write("<p>" + json.name + " FROM " + json.from + "</p>");
+        
+        // オブジェクトを文字列へ
+        str = JSON.stringify(json);
+        document.writeln("JSON文字列=" + str + "<br>");
+
+        // 文字列からオブジェクトへ
+        obj = JSON.parse(str);
+        document.writeln(obj + "<br>");
+        document.write("<p>" + obj.name + " FROM " + obj.from + "</p>");
+
+    </script>
+    
+    <pre>
+        JSONとは "JavaScript Object Notation" の略。
+        JavaScriptの文法の一部と言ってもよい。
+        JSONはオブジェクトと同等に扱える。
+        細かいことを言うと、JSONオブジェクト <-> 文字列 の変換はできるが、
+        JSONオブジェクト <-> 他のオブジェクト の変換はできない。
+        例えば、DateオブジェクトからJSONに変換はできるが、JSONをparseすると文字列にしかならない。
+        Function、正規表現、Errorオブジェクトとundefined値はJSONにできない。
+    </pre>
+</body>
+</html>    

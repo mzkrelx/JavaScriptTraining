@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>JS入門</title>
+</head>
+<body>
+
+    <ul id="list">
+        <li class="fruits">リンゴ</li>
+        <li class="animals">しまうま</li>
+        <li class="bugs">あり</li>
+        <li class="fruits">レモン</li>
+        <li class="animals">ぞう</li>
+        <li class="fruits">メロン</li>
+        <li class="animals">きりん</li>
+        <li class="bugs">ちょうちょ</li>
+        <li class="bugs">はち</li>
+    </ul>
+
+    <button type="button" onclick="show('fruits')">くだもの</button>
+    <button type="button" onclick="show('animals')">どうぶつ</button>
+    <button type="button" onclick="show('bugs')">むし</button>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function show(className) {
+            $("#list").children().css("display", "none");
+            $("." + className).css("display", "block");
+        }
+    </script>
+    
+    <pre>
+        jQuery参考
+        <a href="http://semooh.jp/jquery/">jQuery日本語リファレンス</a>
+           ・<a href="http://semooh.jp/jquery/api/selectors/">Selectors/API/jQuery</a>(要チェック)
+           ・<a href="http://semooh.jp/jquery/api/attributes/">Attributes/API/jQuery</a>(要チェック)
+           ・<a href="http://semooh.jp/jquery/api/css/">CSS/API/jQuery</a>(要チェック)
+
+        問題
+            前回と同じことをjQueryを使ってやってみましょう。
+            (1)「くだもの」を押したとき、背景を赤(#ff0000)に、
+               「どうぶつ」を押したとき、背景を青(#000080)に、
+               「むし」を押したとき、背景を黄色(#ffff00)にしましょう。
+            (2)「どうぶつ」を押したとき、文字色を白(#ffffff)にしましょう。
+    </pre>
+</body>
+</html>    
+    
+
+

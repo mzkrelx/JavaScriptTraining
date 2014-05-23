@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>JS入門</title>
+    
+    <style>
+        ul {
+            list-style:none;
+            margin: 10px;
+        }
+        
+        ul li {
+            float: left;
+            height:20px;
+            margin:0px 0px 0px 10px;
+            padding:5px 15px 5px 15px;
+            border:1px solid #ddd;
+            color: #999;
+            background-color:#ddd;
+            cursor:pointer;
+        }
+        
+        ul li.selected {
+            color: #000;
+            background-color:#fff;
+            cursor:default;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li class="selected">タブ1</li>
+        <li>タブ2</li>
+        <li>タブ3</li>
+    </ul>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $("ul").on("click", "li", function() {
+            $("li.selected").removeClass("selected");
+            $(this).addClass("selected");
+        })
+    </script>
+    
+    <pre>
+        タブ1
+        参考: <a href="http://www.jquerystudy.info/sample/simple/tab1.html">jQuery入門</a>
+    </pre>
+</body>
+</html>    
+    
+
+

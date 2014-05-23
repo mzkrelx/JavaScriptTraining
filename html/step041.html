@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>JS入門</title>
+    
+    <style>
+        ul {
+            list-style:none;
+            margin: 10px;
+        }
+        
+        ul li {
+            float: left;
+            padding:5px 15px 5px 15px;
+            border: 1px #ddd solid;
+            
+            color: #999;
+            height:15px;
+            line-height:15px;
+            margin: 5px 0px 0px 5px;
+            cursor:pointer;
+        }
+        
+        ul li.selected {
+            color: #000;
+            height:20px;
+            line-height:20px;
+            margin: 0px 0px 0px 5px;
+            cursor:default;
+        }
+        
+        #textArea{
+            position:relative;
+            top:-1px;
+            z-index:-1;
+            clear:left;
+            background-color:#ffd;
+            margin:0px 10px 10px 10px;
+            padding:10px;
+            height:100px;
+            border: 1px #ddd solid;
+        }
+        
+        .yellow{
+            background-color:#ffd;
+        }
+        .pink{
+            background-color:#fdf;  
+        }
+        .blue{
+            background-color:#dff;  
+        }
+        
+        ul li.yellow.selected{
+            border-bottom: 1px #ffd solid;
+        }
+        ul li.pink.selected{
+            border-bottom: 1px #fdf solid;
+        }
+        ul li.blue.selected{
+            border-bottom: 1px #dff solid;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li class="yellow" id="tab_1">タブ1</li>
+        <li class="pink" id="tab_2">タブ2</li>
+        <li class="blue" id="tab_3">タブ3</li>
+    </ul>
+    <div id="textArea">
+        <div id="text_1">タブ1のコンテンツ</div>
+        <div id="text_2">タブ2のコンテンツ</div>
+        <div id="text_3">タブ3のコンテンツ</div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $("ul").on("click", "li", function() {
+            $("li.selected").removeClass("selected");
+            $(this).addClass("selected");
+            
+            myID = this.id.split("_")[1];
+            $("#textArea>div").hide();
+            $("#text_" + myID).show();
+            
+            var myColor = $(this).css("background-color");
+            $("#textArea").css("background-color", myColor);
+        })
+        $("#tab_1").trigger("click");
+    </script>
+    
+    <pre>
+        タブ4
+        参考: <a href="http://www.jquerystudy.info/sample/simple/tab4.html">jQuery入門</a>
+    </pre>
+</body>
+</html>    
+    
+
+

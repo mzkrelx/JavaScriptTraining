@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>JS入門</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function judge(number){
+            if (number < 0) {
+                document.getElementById("resultText").innerHTML = "マイナス";
+            } else if (number == 0){
+                document.getElementById("resultText").innerHTML = "ゼロ";
+            } else {
+                document.getElementById("resultText").innerHTML = "プラス";
+            }
+        }
+    </script>
+    <input type="text" id="num">
+    <input type="button" value="判断" onclick="handan(num.value)">
+    <div id="resultText">ここに結果を表示します</div>
+    
+    <pre>
+        if (条件式) {
+            true の時の処理
+        } else {
+            false の時の処理
+        }    
+    </pre>
+    
+    <p>演算子参考: <a href="http://www.tohoho-web.com/js/operator.htm#logical">とほほのJavaScriptリファレンス・演算子</a></p>
+</body>
+</html>

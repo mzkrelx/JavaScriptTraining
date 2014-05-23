@@ -1,0 +1,7 @@
+tab_contents({
+"fruits": [
+{ "name":"リンゴ" , "color":"red" },
+{ "name":"レモン" , "color":"yellow" },
+{ "name":"メロン" , "color":"green" },
+]
+})

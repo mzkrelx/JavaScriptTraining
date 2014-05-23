@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>JS入門</title>
+</head>
+<body>
+
+    <ul id="list">
+        <li class="fruits">リンゴ</li>
+        <li class="animals">しまうま</li>
+        <li class="bugs">あり</li>
+        <li class="fruits">レモン</li>
+        <li class="animals">ぞう</li>
+        <li class="fruits">メロン</li>
+        <li class="animals">きりん</li>
+        <li class="bugs">ちょうちょ</li>
+        <li class="bugs">はち</li>
+    </ul>
+
+    <button type="button" onclick="show('fruits')">くだもの</button>
+    <button type="button" onclick="show('animals')">どうぶつ</button>
+    <button type="button" onclick="show('bugs')">むし</button>
+
+    <script type="text/javascript">
+    function show(className) {
+        // 全部非表示に
+        var allList = document.getElementById("list").children;
+        for (i = 0; i < allList.length; i++) {
+            allList[i].style.display = "none";
+        }
+        
+        // 選択したものだけ表示
+        var classList = document.getElementsByClassName(className);
+        for (i = 0; i < classList.length; i++) {
+            classList[i].style.display = "block";
+        }
+    }
+    </script>
+    
+    <pre>
+        問題
+            (1)「くだもの」を押したとき、背景を赤(#ff0000)に、
+               「どうぶつ」を押したとき、背景を青(#000080)に、
+               「むし」を押したとき、背景を黄色(#ffff00)にしましょう。
+               
+               参考:<a href="http://www.tohoho-web.com/js/style.htm#ObjStyle">とほほのJavaScriptリファレンス スタイル</a>
+               
+            (2)「どうぶつ」を押したとき、文字色を白(#ffffff)にしましょう。
+            
+            (3)テキストボックスを2つと追加ボタンを用意します。
+               テキストボックスには class になる値と、ものの名前を入力し、追加ボタンを押すとリストの最後に追加されるようにしましょう。
+               
+               参考:<a href="http://www.tohoho-web.com/js/dom.htm">とほほのJavaScriptリファレンス ドキュメントオブジェクトモデル（DOM）</a>
+    </pre>
+</body>
+</html>    
+    
+
+

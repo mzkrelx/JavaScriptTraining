@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>JS入門</title>
+</head>
+<body>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function tab_contents(json) {
+            if (json) {
+                document.write(json.fruits[0].name);
+            }
+        }
+    </script>
+    
+    <script type="text/javascript" src="./tab_contents1.json"></script>
+
+    <pre>
+        参考: <a href="http://www.crystal-creation.com/web-app/tech/web-api/hatena/entry/">はてなブックマークエントリー情報取得API</a>
+        
+        script の src を Ajax トランスポートとして使う方法は、JSONP という。JSONPrefix または JSONPadding の略。
+        ただのJSONではなく埋め込みJavaScriptなので、そのままコードとしての意味をなす。(埋め込み=Padding)
+        ファンクション名を先頭に書いて、()内にJSONを書けば、コールバックとして実行される感じになる。
+        
+    </pre>
+</body>
+</html>    

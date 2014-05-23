@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>JS入門</title>
+    
+    <style>
+        ul {
+            list-style:none;
+            margin: 10px;
+        }
+        
+        ul li {
+            float: left;
+            height:20px;
+            margin:0px 0px 0px 10px;
+            padding:5px 15px 5px 15px;
+            color: #999;
+            background-color:#ddd;
+            cursor:pointer;
+            
+            border-top: 1px #ddd solid;
+            border-left: 1px #ddd solid;
+            border-right: 1px #ddd solid;
+        }
+        
+        ul li.selected {
+            color: #000;
+            background-color:#fff;
+            cursor:default;
+        }
+        
+        #textArea{
+            position:relative;
+            top:-1px;
+            z-index:-1;
+            
+            clear:left;
+            width:600px;
+            height:100px;
+            margin:0px 10px 10px 10px;
+            padding:10px;
+            border: 1px #ddd solid;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li id="tab_1">タブ1</li>
+        <li id="tab_2">タブ2</li>
+        <li id="tab_3">タブ3</li>
+    </ul>
+    <div id="textArea">
+        <div id="text_1">タブ1のコンテンツ</div>
+        <div id="text_2">タブ2のコンテンツ</div>
+        <div id="text_3">タブ3のコンテンツ</div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $("ul").on("click", "li", function() {
+            $("li.selected").removeClass("selected");
+            $(this).addClass("selected");
+            
+            myID = this.id.split("_")[1];
+            $("#textArea>div").hide();
+            $("#text_" + myID).show();
+        })
+        $("#tab_1").trigger("click");
+    </script>
+    
+    <pre>
+        タブ3
+        参考: <a href="http://www.jquerystudy.info/sample/simple/tab3.html">jQuery入門</a>
+    </pre>
+</body>
+</html>    
+    
+
+
